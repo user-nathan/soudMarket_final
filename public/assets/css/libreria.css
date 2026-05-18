@@ -1,0 +1,164 @@
+/* public/assets/css/libreria.css */
+
+/* Botón de volver con estilos claros */
+.btn-volver { 
+    color: #fe2c55; 
+    text-decoration: none; 
+    font-weight: bold; 
+    display: inline-block; 
+    margin-bottom: 30px; 
+    transition: 0.2s; 
+}
+.btn-volver:hover { 
+    color: #e0244a; 
+}
+
+/* Contenedor principal de la página: limita el ancho máximo y centra TODO el contenido */
+.seccion-libreria { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+    box-sizing: border-box;
+}
+
+/* Contenedor de la Cabecera con la Portada */
+.cabecera-pack { 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    margin-bottom: 40px; 
+    background: #1e1e1e; 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 1px solid #333; 
+    text-align: left; 
+}
+
+.portada-pack { 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 8px; 
+    object-fit: cover; 
+    background: #2a2a2a; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    flex-shrink: 0; 
+}
+
+.info-pack h1 { 
+    margin: 0 0 10px 0; 
+    color: #00ff88; 
+    font-size: 28px; 
+}
+
+.info-pack p { 
+    margin: 0; 
+    color: #aaa; 
+    font-size: 15px; 
+    line-height: 1.5; 
+}
+
+/* CONTENEDOR DE LA LISTA */
+.lista-samples { 
+    background: #1e1e1e; 
+    border: 1px solid #333; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    text-align: left; 
+}
+
+/* Texto informativo cuando no hay samples */
+.lista-samples-vacia {
+    padding: 20px; 
+    color: #666; 
+    margin: 0; 
+    text-align: center;
+}
+
+.sample-item { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    padding: 20px; 
+    border-bottom: 1px solid #333; 
+}
+.sample-item:last-child { 
+    border-bottom: none; 
+}
+
+/* Bloque superior: Texto e información */
+.info-audio { 
+    width: 100%; 
+}
+
+.info-audio strong { 
+    display: block; 
+    font-size: 16px; 
+    color: #fff; 
+    margin-bottom: 6px; 
+    word-break: break-all; 
+}
+
+.info-audio span { 
+    color: #888; 
+    font-size: 13px; 
+    margin-right: 15px; 
+    background: #2a2a2a; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+}
+
+/* Bloque inferior: Controles en línea */
+.controles-audio { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 15px; 
+    width: 100%; 
+}
+
+audio { 
+    background: #2a2a2a; 
+    border-radius: 6px; 
+    height: 40px; 
+    width: 100%;
+    max-width: 450px; 
+}
+
+/* Botón de compra adaptativo */
+.btn-comprar-sample { 
+    background: #fe2c55; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    text-transform: uppercase; 
+    font-size: 13px; 
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    box-sizing: border-box;
+    text-decoration: none; /* Añadido aquí de forma limpia */
+}
+.btn-comprar-sample:hover { 
+    background: #e0244a; 
+    transform: scale(1.02); 
+}
+
+/* Responsividad para móviles */
+@media (max-width: 500px) {
+    .controles-audio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    audio {
+        max-width: 100%;
+    }
+    .btn-comprar-sample {
+        width: 100%;
+    }
+}

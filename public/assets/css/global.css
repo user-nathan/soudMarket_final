@@ -1,0 +1,88 @@
+/* contiene los estilos que se repiten siempre, header, menu, fondo, tipografia */
+
+/* ESTILOS DE HEADER */
+/* public/assets/css/global.css */
+
+body { 
+    font-family: sans-serif; 
+    background: #121212; 
+    color: #fff; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* HEADER PRINCIPAL */
+.header { 
+    background: #1a1a1a; 
+    padding: 15px 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #333; 
+}
+
+.logo { 
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #00ff88; 
+    text-decoration: none; 
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    margin-left: 20px; 
+    transition: 0.2s; 
+}
+
+.nav-links a:hover { 
+    color: #00ff88; 
+}
+
+/* Monedero en el Header */
+.header-creditos { 
+    color: #00ff88; 
+    font-weight: bold; 
+    margin-left: 20px; 
+    background: #222; 
+    padding: 6px 12px; 
+    border-radius: 20px; 
+    border: 1px solid #333; 
+}
+
+.btn-recargar { 
+    background: #fe2c55; 
+    color: #fff !important; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    transition: 0.2s; 
+}
+
+.btn-recargar:hover { 
+    background: #e0244a !important; 
+    transform: scale(1.05); 
+}
+
+/* CONTENIDO CENTRAL */
+.main-content { 
+    text-align: center; 
+    padding-top: 100px; 
+    height: calc(100vh - 160px); 
+}
+
+h1 { 
+    font-size: 42px; 
+    margin-bottom: 10px; 
+}
+
+p { 
+    color: #aaa; 
+    font-size: 18px; 
+}
+
