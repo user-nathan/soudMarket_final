@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Subir Nuevo Sample - SoundMarket</title>
+    <title>Subir Nuevo Sample </title>
     
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/admin.css">

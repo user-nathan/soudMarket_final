@@ -11,7 +11,7 @@ class usuarioController {
             session_start();
         }
 
-        // 2. Filtro de seguridad: Si no está logueado, patitas a la calle (al login)
+        // 2. verificamos si esta logueado
         if (!isset($_SESSION['usuario_id'])) {
             header("Location: /login");
             exit;

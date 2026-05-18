@@ -126,7 +126,7 @@
     border: 1px solid #333;
 }
 
-/* --- ESTILOS DE LIBRERÍAS (CARÁTULAS) --- */
+/* --- ESTILOS DE LIBRERÍAS --- */
 .grid-librerias {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 

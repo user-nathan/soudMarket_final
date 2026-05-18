@@ -12,7 +12,7 @@ class creditosController {
 
         $datosUsuario = null;
 
-        // Si SÍ está logueado, buscamos sus datos para pintar su monedero real
+        // Si está logueado, buscamos sus datos para imprmir su saldo real
         if (isset($_SESSION['usuario_id'])) {
             $datosUsuario = usuario::obtenerPorId($_SESSION['usuario_id']);
         }

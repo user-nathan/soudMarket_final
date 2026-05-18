@@ -1,7 +1,7 @@
 <?php 
 // app/views/libreriaVista.php
 
-// 1. Inyectamos la cabecera común
+// Inyectamos la cabecera común
 require_once '../app/views/includes/header.php'; 
 ?>
 
@@ -53,6 +53,6 @@ require_once '../app/views/includes/header.php';
 </div>
 
 <?php 
-// 2. Inyectamos el pie de página común
+// Inyectamos el pie de página común
 require_once '../app/views/includes/footer.php'; 
 ?>

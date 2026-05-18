@@ -1,14 +1,14 @@
 <?php
 // public/index.php
 
-// 1. Cargamos los archivos del núcleo
+// 1. Cargamos los archivos principales
 require_once '../app/core/database.php';
 require_once '../app/core/enrutador.php';
 
 // 2. Iniciamos el enrutador
 $enrutador = new Enrutador();
 
-// 3. DEFINICIÓN DE RUTAS DE PRUEBA
+
 // Cuando el usuario entre a la raíz "/", llamará al método "index" del "homeController"
 $enrutador->get('/', 'homeController@index');
 
@@ -27,7 +27,7 @@ $enrutador->get('/logout', 'autenticacionController@logout');
 // Ruta del Perfil
 $enrutador->get('/perfil', 'usuarioController@mostrarPerfil');
 
-// Rutas de Perfil para el Usuario para modificar los datos de usuario
+// para modificar los datos de usuario
 $enrutador->post('/perfil/actualizar', 'usuarioController@actualizarPerfil');
 
 
@@ -38,7 +38,7 @@ $enrutador->get('/recargar', 'creditosController@mostrarTienda');
 $enrutador->get('/checkout', 'creditosController@mostrarCheckout');
 $enrutador->post('/checkout', 'creditosController@procesarPago');
 
-// Ruta exclusiva para el administrador
+// Ruta para el administrador
 $enrutador->get('/admin', 'adminController@mostrarPanel');
 
 // Rutas para añadir samples
@@ -62,7 +62,7 @@ $enrutador->get('/libreria', 'homeController@mostrarLibreria');
 $enrutador->get('/libreria/descargar', 'homeController@descargarSample');
 
 
-// rutas globales
+
 //$enrutador->get('/probarmodelo', 'homeController@probarModelo');
 
 // 4. Ponemos a funcionar el enrutador

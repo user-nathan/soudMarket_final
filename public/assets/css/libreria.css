@@ -13,7 +13,7 @@
     color: #e0244a; 
 }
 
-/* Contenedor principal de la página: limita el ancho máximo y centra TODO el contenido */
+/* Contenedor principal de la página: limita el ancho máximo y centra todo el contenido */
 .seccion-libreria { 
     max-width: 900px; 
     margin: 0 auto; 
@@ -107,7 +107,7 @@
     border-radius: 4px; 
 }
 
-/* Bloque inferior: Controles en línea */
+/*  */
 .controles-audio { 
     display: flex; 
     align-items: center; 
@@ -142,7 +142,7 @@ audio {
     justify-content: center;
     height: 40px;
     box-sizing: border-box;
-    text-decoration: none; /* Añadido aquí de forma limpia */
+    text-decoration: none; 
 }
 .btn-comprar-sample:hover { 
     background: #e0244a; 

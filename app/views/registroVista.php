@@ -1,7 +1,7 @@
 <?php 
 // app/views/registroVista.php
 
-$cssEspecifico = 'login.css'; // <--- ¡Le decimos al header qué CSS cargar antes de que pinte la página!
+$cssEspecifico = 'login.css'; //
 require_once '../app/views/includes/header.php';  
 ?>
 
@@ -29,6 +29,6 @@ require_once '../app/views/includes/header.php';
 </div>
 
 <?php 
-// 2. Inyectamos el cierre estructural de la página
+// Inyectamos el cierre estructural de la página
 require_once '../app/views/includes/footer.php'; 
 ?>

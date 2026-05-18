@@ -50,7 +50,7 @@ class adminController {
         $id_album = $_POST['id_album'] ?? 1;
         $precio = $_POST['precio_creditos'] ?? 5;
 
-        // Inserción limpia respetando tus claves foráneas exactas
+        // Inserción 
         $db = Database::connect();
         $stmt = $db->prepare("INSERT INTO samples (nombre, archivo_url, bpm, tonalidad, id_categoria, id_genero, id_album, precio_creditos) 
                               VALUES (:nombre, :archivo_url, :bpm, :tonalidad, :id_categoria, :id_genero, :id_album, :precio)");

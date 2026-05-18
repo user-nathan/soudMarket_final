@@ -1,7 +1,7 @@
 <?php 
 // app/views/homeVista.php
 
-// 1. Inyectamos la cabecera global con tu menú y tus estilos
+// Inyectamos la cabecera global el menú y los estilos
 require_once '../app/views/includes/header.php'; 
 
 // REVISIÓN DE FILTROS: Evaluamos si el usuario ha enviado alguna búsqueda
@@ -58,7 +58,7 @@ $busquedaActiva = !empty($_GET['categoria']) || !empty($_GET['genero']) || !empt
 
     <?php if (!$busquedaActiva): ?>
         <h2 class="titulo-seccion">🔥 Librerías Disponibles</h2>
-        <p class="subtitulo-seccion">Explora los packs completos creados por la comunidad</p>
+        <!-- <p class="subtitulo-seccion">Explora los packs completos </p> -->
 
         <div class="grid-librerias">
             <?php if (empty($albums)): ?>
@@ -125,6 +125,6 @@ $busquedaActiva = !empty($_GET['categoria']) || !empty($_GET['genero']) || !empt
 <script src="/assets/js/home.js"></script>
 
 <?php 
-// 2. Inyectamos el cierre estructural de la página
+// Inyectamos el cierre estructural de la página
 require_once '../app/views/includes/footer.php'; 
 ?>

@@ -1,7 +1,7 @@
 <?php 
 // app/views/recargarVista.php
 
-// 1. Usamos el CSS compartido de perfil que ya tiene el diseño de la tienda
+//Usamos el CSS compartido de perfil que ya tiene el diseño de la tienda
 $cssEspecifico = 'perfil.css'; 
 require_once '../app/views/includes/header.php'; 
 ?>
@@ -49,6 +49,6 @@ require_once '../app/views/includes/header.php';
 </div>
 
 <?php 
-// 2. Inyectamos el pie de página global
+//Inyectamos el pie de página global
 require_once '../app/views/includes/footer.php'; 
 ?>

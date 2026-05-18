@@ -1,7 +1,7 @@
 <?php 
 // app/views/perfilVista.php
 
-// 1. Le decimos al header inteligente qué CSS inyectar arriba del todo
+//
 $cssEspecifico = 'perfil.css'; 
 require_once '../app/views/includes/header.php'; 
 ?>
@@ -86,6 +86,6 @@ require_once '../app/views/includes/header.php';
 
 <script src="/assets/js/perfil.js"></script>
 <?php 
-// 2. Inyectamos el pie de página global
+//Inyectamos el pie de página global
 require_once '../app/views/includes/footer.php'; 
 ?>

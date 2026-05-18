@@ -22,7 +22,7 @@ class Enrutador {
         if (isset($this->rutas[$metodo][$url])) {
             list($controlador, $metodoAccion) = explode('@', $this->rutas[$metodo][$url]);
 
-            // Busca el archivo respetando las mayúsculas tal cual lo llamaste
+            // Busca el archivo respetando las mayúsculas
             if (file_exists("../app/controllers/$controlador.php")) {
                 require_once "../app/controllers/$controlador.php";
                 $instanciaControlador = new $controlador();

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pasarela de Pago Segura - SoundMarket</title>
+    <title>Pasarela de Pago </title>
     <style>
         body { font-family: sans-serif; background: #121212; color: #fff; text-align: center; padding: 50px 20px; }
         .checkout-container { background: #1e1e1e; border: 1px solid #333; padding: 30px; display: inline-block; border-radius: 8px; text-align: left; width: 360px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
@@ -22,7 +22,7 @@
         <h3 style="text-align: center; margin-top: 0; color: #fff;">💳 Pago con Tarjeta</h3>
         
         <div class="alert-simulacion">
-            <strong>⚙️ ENTRADA DE SIMULACIÓN (TFG):</strong><br>
+            <strong>⚙️ ENTRADA DE SIMULACIÓN:</strong><br>
             Puede introducir cualquier número de tarjeta simulado para validar el flujo.
         </div>
 

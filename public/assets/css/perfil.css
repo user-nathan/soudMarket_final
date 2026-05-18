@@ -216,9 +216,9 @@
     }
 }
 
-/* parte para darle soporte al monedero de perfil */
+/* monedero del perfil */
 
-/* Estilos extra exclusivos para la vista independiente de recargar créditos */
+/* Estilos para la vista independiente de recargar créditos */
 .tienda-recargar-solitaria {
     display: inline-block;
     margin: 50px auto;

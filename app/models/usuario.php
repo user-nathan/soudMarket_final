@@ -3,12 +3,12 @@
 
 class Usuario {
     
-    // 1. Verificar si el correo o el nombre de usuario ya existen en la base de datos
+    // Verificar si el correo o el nombre de usuario ya existen en la base de datos
     public static function existe($email, $username) {
-        // Nos conectamos usando tu clase Database con PDO
+        // Nos conectamos usando Database con PDO
         $db = Database::connect();
         
-        // Preparamos la consulta con parámetros nombrados (muy seguro contra Inyección SQL)
+        // Preparamos la consulta con parámetros nombrados
         $stmt = $db->prepare("SELECT id FROM usuarios WHERE email = :email OR username = :username");
         
         // Ejecutamos pasando los datos reales
@@ -21,7 +21,7 @@ class Usuario {
         return $stmt->rowCount() > 0;
     }
 
-    // 2. Insertar el nuevo usuario en la base de datos
+    // Insertar el nuevo usuario en la base de datos
     public static function crear($username, $email, $passwordCifrada) {
         $db = Database::connect();
         
@@ -37,18 +37,18 @@ class Usuario {
         return $resultado;
     }
 
-    // 3. Obtener todos los datos de un usuario usando su ID 
+    // Obtener todos los datos de un usuario usando su ID 
     public static function obtenerPorId($id) {
         $db = Database::connect();
         
-        // Usamos los nombres exactos de tus columnas
+        // 
         $stmt = $db->prepare("SELECT id, username, email, rol, creditos, plan, fecha_registro FROM usuarios WHERE id = :id");
         $stmt->execute(['id' => $id]);
         
         return $stmt->fetch();
     }
 
-    // 4. Sumar créditos al monedero de un usuario tras una compra exitosa
+    // Sumar créditos al monedero de un usuario tras una compra exitosa
     public static function sumarCreditos($idUsuario, $cantidadAñadir) {
         $db = Database::connect();
         

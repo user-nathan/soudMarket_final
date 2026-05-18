@@ -1,38 +1,41 @@
 <?php
 // app/controllers/autenticacionController.php
 
-// Cargamos el modelo de usuario que creamos en el paso anterior
+// 
 require_once '../app/models/usuario.php';
 
-class autenticacionController {
-    
+class autenticacionController
+{
+
     // 1. Muestra el formulario (GET)
-    public function mostrarRegistro() {
+    public function mostrarRegistro()
+    {
         require_once '../app/views/registroVista.php';
     }
 
     // 2. Procesa los datos del formulario (POST)
-    public function registrar() {
-        // Recogemos y limpiamos los datos tal cual tu código antiguo
+    public function registrar()
+    {
+        // Recogemos y limpiamos los datos 
         $username = trim($_POST['username'] ?? '');
         $email    = trim($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
 
-        // Ciframos la contraseña con tu método original
+        // Ciframos la contraseña 
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
         try {
-            // Verificamos si el usuario o email ya existen usando el Modelo
+            // Verificamos si el usuario o email ya existen
             if (usuario::existe($email, $username)) {
                 $error = "El usuario o el email ya están registrados.";
-                // Si existe, recargamos la vista mostrando el error
+                // 
                 require_once '../app/views/registroVista.php';
             } else {
-                // Si no existe, lo insertamos usando el Modelo
+                // 
                 $creado = usuario::crear($username, $email, $password_hash);
 
                 if ($creado) {
-                    // Redirigimos de forma limpia al login con tu parámetro original
+                    // Redirigimos de forma limpia al login 
                     header("Location: /login?registro=exito");
                     exit;
                 } else {
@@ -41,20 +44,22 @@ class autenticacionController {
                 }
             }
         } catch (PDOException $e) {
-            // Tu atrapador de errores técnicos original
+            // para capturar los errores
             $error = "Error técnico: " . $e->getMessage();
             require_once '../app/views/registroVista.php';
         }
     }
 
     // 3. Muestra el formulario de Login (GET)
-    public function mostrarLogin() {
+    public function mostrarLogin()
+    {
         require_once '../app/views/loginVista.php';
     }
 
     // 4. Procesa el inicio de sesión (POST)
-    public function login() {
-        // Recogemos los datos limpios
+    public function login()
+    {
+        // Recogemos los datos 
         $username = trim($_POST['username'] ?? '');
         $password = $_POST['password'] ?? '';
 
@@ -70,19 +75,19 @@ class autenticacionController {
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
-            
-            // Guardamos los datos que necesites en la sesión
+
+            // Guardamos los datos que se necesita en la sesión
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['usuario_nombre'] = $usuario['username'];
-            $_SESSION['usuario_rol'] = $usuario['rol']; // Guardamos el rol en la sesión
+            $_SESSION['usuario_rol'] = $usuario['rol'];
 
-            // Separación inteligente de caminos:
-if ($usuario['rol'] === 'admin') {
-    header("Location: /admin"); // Si es admin, va a su zona de control
-} else {
-    header("Location: /");      // Si es usuario estándar, va al inicio
-}
-exit;
+            // Separación "inteligente" de caminos:
+            if ($usuario['rol'] === 'admin') {
+                header("Location: /admin"); // Si es admin, va a su zona de control
+            } else {
+                header("Location: /");      // Si es usuario estándar, va al inicio
+            }
+            exit;
         } else {
             // Si falla, creamos el mensaje de error para la vista
             $error = "El usuario o la contraseña son incorrectos.";
@@ -91,7 +96,8 @@ exit;
     }
 
     // 5. Cierra la sesión del usuario (GET)
-    public function logout() {
+    public function logout()
+    {
         // Nos aseguramos de que la sesión esté iniciada para poder borrarla
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -103,16 +109,21 @@ exit;
         // Destruimos la cookie de sesión en el navegador si existe
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000,
-                $params["path"], $params["domain"],
-                $params["secure"], $params["httponly"]
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
             );
         }
 
-        // Destruimos la sesión en el servidor
+        // Destruimos la sesión 
         session_destroy();
 
-        // Redirigimos limpiamente al login
+        // Redirigimos al login
         header("Location: /");
         exit;
     }

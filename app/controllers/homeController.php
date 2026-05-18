@@ -18,7 +18,7 @@ class homeController {
         $bpm       = $_GET['bpm'] ?? '';
         $tono      = $_GET['tono'] ?? '';
 
-        // EVALUACIÓN CRUCIAL: ¿El usuario está usando el buscador o la URL está limpia?
+        // ¿El usuario está usando el buscador o la URL está limpia?
         $busquedaActiva = !empty($categoria) || !empty($genero) || !empty($bpm) || !empty($tono);
 
         // Inicializamos los arrays vacíos
@@ -60,7 +60,7 @@ class homeController {
                 $params['genero'] = $genero;
             }
 
-            // Filtro por BPM exacto
+            // Filtro por BPM 
             if (!empty($bpm)) {
                 $sql .= " AND s.bpm = :bpm";
                 $params['bpm'] = (int)$bpm;
@@ -105,7 +105,7 @@ class homeController {
             header("Location: /"); exit; 
         }
 
-        // 3. Usamos 'id_album' que es tu columna real en MySQL
+        // 3. Usamos 'id_album' 
         $stmtSamples = $db->prepare("SELECT id, nombre, archivo_url, bpm, tonalidad, precio_creditos FROM samples WHERE id_album = :id_album ORDER BY id DESC");
         $stmtSamples->execute(['id_album' => $id_album]);
         $samples = $stmtSamples->fetchAll(PDO::FETCH_ASSOC);
@@ -117,7 +117,7 @@ class homeController {
     public function descargarSample() {
         if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
-        // 1. Seguridad: Si no está logueado, no puede descargar
+        // 1. Si no está logueado, no puede descargar
         if (!isset($_SESSION['usuario_id'])) {
             die("Debes iniciar sesión para descargar samples.");
         }
@@ -144,7 +144,7 @@ class homeController {
             die("No tienes suficientes créditos en tu monedero para este sample.");
         }
 
-        // 5. EMPEZAMOS LA TRANSACCIÓN EN LA BASE DE DATOS
+        // 5. TRANSACCIÓN EN LA BASE DE DATOS
         $db->beginTransaction();
         try {
             // Restar los créditos al usuario
