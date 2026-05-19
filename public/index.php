@@ -2,13 +2,13 @@
 // public/index.php
 
 // 1. Cargamos los archivos principales
-//require_once '/app/core/database.php';
-//require_once '../app/core/enrutador.php';
+require_once '/app/core/database.php';
+require_once '../app/core/enrutador.php';
 
 //prueba para la ruta de la nube
 // 1. Cargamos los archivos principales
-require_once __DIR__ . '/../app/core/database.php';
-require_once __DIR__ . '/../app/core/enrutador.php';
+//require_once __DIR__ . '/../app/core/database.php';
+//require_once __DIR__ . '/../app/core/enrutador.php';
 
 // 2. Iniciamos el enrutador
 $enrutador = new Enrutador();
