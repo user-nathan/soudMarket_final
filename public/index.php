@@ -2,7 +2,7 @@
 // public/index.php
 
 // 1. Cargamos los archivos principales
-require_once '/app/core/database.php';
+require_once '../app/core/database.php';
 require_once '../app/core/enrutador.php';
 
 //prueba para la ruta de la nube
